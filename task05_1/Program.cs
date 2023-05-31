@@ -36,3 +36,5 @@ int firstDigit = FindFirst(number);
 int secondDigit = FindSecond(number);
 FindLargestDigit(number, firstDigit, secondDigit);
 
+int number1 = new Random().Next(10, 100);
+FindLargestDigit(number1, FindFirst(number1), FindSecond(number1));
