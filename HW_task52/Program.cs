@@ -31,23 +31,35 @@ void FillArray(int [,] matr)
     }
 }
 
+
+// извините, когда вчера отправила у меня не получилось вывести все числа
+// а сегодня я нашла и исправила оштбку, в общем все выводит верно!
+// и семинар тоже просмотрела, задачи решилаБ можете увидеть task23-24
+// репозиторий открыт. Надеюсь когда-нибуть попаду на семинар, 
+// очень хочется пошарить экран))
+
 void ArifSredStolb (int [,] matr)
 {
-    int [] sum = new int [matr.GetLength(0)];
-    double Sred = 0;
+    int [] sum = new int [matr.GetLength(1)];
     for (int j = 0; j < matr.GetLength(1); j++)
     {
         for (int i = 0; i < matr.GetLength(0); i++)
         {
             sum [j] = matr[i,j]+ sum[j];
         }
-        Console.WriteLine(sum[j]/matr.GetLength(0)); 
+        Console.Write($"{sum[j]/matr.GetLength(0)} "); 
     }   
 }
 
 int m = Prompt("text m:");
 int n = Prompt("text n:");
 int [,] matrix = new int [m,n];
+
+Console.WriteLine();
+
 FillArray(matrix);
 PrintArray(matrix);
+
+Console.WriteLine();
+
 ArifSredStolb(matrix);
