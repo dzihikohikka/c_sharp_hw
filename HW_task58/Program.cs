@@ -29,29 +29,31 @@ void FillArray(int [,] matr)
         }
     }
 }
-
+// Ура! у меня все получилось, ошибка оказалась опечаткой и неправильный вывод готовой матрицы
+// сам алгоритм был верныйб надеюсь новая версия у вас отобразится и я успела)
+// с формулой очень сомневалась, но все проверила на онлайн калькуляторе для матриц, пришлось посидеть с листочком подумать)))
 void ComposMatrix(int [,] matr1, int [,] matr2)
 {
-
-
     if (matr1.GetLength(1)!=matr2.GetLength(0))
     {
         Console.WriteLine("we can't myltiply theese matrixs");
     }
     else
     {    
-        int [,] mylt = new int [matr1.GetLength(0), matr2.GetLength(1)];
-        for (int i = 0; i < mylt.GetLength(0); i++)
+        int [,] mult = new int [matr1.GetLength(0), matr2.GetLength(1)];
+        for (int i = 0; i < mult.GetLength(0); i++)
         {
-            for (int j = 0; j < mylt.GetLength(1); j++)
+            for (int j = 0; j < mult.GetLength(1); j++)
             {
                 for (int n = 0; n < matr1.GetLength(0); n++)
                 {
-                mylt[i,j] = matr1[i,n]*matr2[n,j]+mult[i,j];
+                mult[i,j] = matr1[i,n]*matr2[n,j]+mult[i,j];
                 }
+                Console.Write($"{mult[i,j]} ");
             }
+        Console.WriteLine();
         }
-            Console.WriteLine($"myltiply of matrixs is: {mylt[i,j]}");
+
     }
     
 }
@@ -67,7 +69,11 @@ int [,] matrix2 = new int [m1,n1];
 Console.WriteLine();
 
 FillArray(matrix1);
+PrintArray(matrix1);
+Console.WriteLine();
+FillArray(matrix2);
 PrintArray(matrix2);
+
 
 Console.WriteLine();
 
