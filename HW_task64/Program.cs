@@ -1,4 +1,4 @@
-﻿// вывод натур чисел от m до n
+﻿// вывод натур чисел от n до 1
 
 int Prompt(string message)
 {
@@ -7,17 +7,16 @@ int Prompt(string message)
     return a;
 }
 
-void NaturNum(int minNum, int num)
+void NaturNum(int num)
 {
-    if (minNum <= num)
+    if (num > 0)
     {
-        Console.Write($"{minNum} ");
-        NaturNum(minNum+1, num);
+        Console.Write($"{num} ");
+        NaturNum(num-1);
     }
 }
 
-int minNumber = Prompt("text min number");
-int number = Prompt("text max number");
+int number = Prompt("text number");
 
-NaturNum(minNumber, number);
+NaturNum(number);
 
