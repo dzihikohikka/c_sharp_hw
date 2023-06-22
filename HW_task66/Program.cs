@@ -1,7 +1,5 @@
 ﻿// сумма натур от n до m
 
-// вывод натур чисел от m до n
-
 int Prompt(string message)
 {
     Console.WriteLine(message);
